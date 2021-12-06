@@ -3,7 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,netbeans,intellij+all,eclipse,visualstudio,visualstudiocode,gradle,java
 
 ### Grafana ###
-./grafana/data
+grafana/data/
 
 ### Eclipse ###
 .metadata
