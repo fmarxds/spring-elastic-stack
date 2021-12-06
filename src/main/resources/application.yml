@@ -1,0 +1,42 @@
+spring:
+  application.name: spring-elastic-stack
+
+server.port: 5000
+
+management:
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      export:
+        prometheus:
+          enabled: true
+    endpoint:
+      health:
+        show-components: ALWAYS
+      metrics:
+        enabled: true
+      prometheus:
+        enabled: true
+
+spring.data:
+  mongodb:
+    host: ${MONGO_HOST:localhost}
+    port: ${MONGO_PORT:27017}
+    database: ${MONGO_DATABASE:elastic-stack}
+    username: ${MONGO_USERNAME:admin}
+    password: ${MONGO_PASSWORD:admin}
+
+opentracing.jaeger:
+  udp-sender:
+    host: ${JAEGER_HOST:localhost}
+    port: ${JAEGER_PORT:6831}
+  log-spans: true
+
+
+logging.level:
+  org.zalando.logbook: TRACE
+  org.springframework.data.mongodb.core.MongoTemplate: DEBUG
