@@ -117,7 +117,6 @@ services:
       - "9300:9300"
     environment:
       - "discovery.type=single-node"
-      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
 
   kibana:
     image: kibana:7.14.2
@@ -130,4 +129,3 @@ services:
     environment:
       - "ELASTICSEARCH_HOSTS=http://elasticsearch:9200"
       - "discovery.type=single-node"
-      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
