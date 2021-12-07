@@ -96,36 +96,36 @@ services:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
       - ./grafana/data/grafana_data:/var/lib/grafana
 
-  logstash:
-    image: logstash:7.14.2
-    container_name: logstash
-    restart: always
-    depends_on:
-      - elasticsearch
-    volumes:
-      - ./logstash/pipeline/:/usr/share/logstash/pipeline/
-      - ./logs/:/app/logs/:ro
-
-  elasticsearch:
-    image: elasticsearch:7.14.2
-    container_name: elasticsearch
-    restart: always
-    depends_on:
-      - backend
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-    environment:
-      - "discovery.type=single-node"
-
-  kibana:
-    image: kibana:7.14.2
-    container_name: kibana
-    restart: always
-    depends_on:
-      - logstash
-    ports:
-      - "9093:5601"
-    environment:
-      - "ELASTICSEARCH_HOSTS=http://elasticsearch:9200"
-      - "discovery.type=single-node"
+#  logstash:
+#    image: logstash:7.14.2
+#    container_name: logstash
+#    restart: always
+#    depends_on:
+#      - elasticsearch
+#    volumes:
+#      - ./logstash/pipeline/:/usr/share/logstash/pipeline/
+#      - ./logs/:/app/logs/:ro
+#
+#  elasticsearch:
+#    image: elasticsearch:7.14.2
+#    container_name: elasticsearch
+#    restart: always
+#    depends_on:
+#      - backend
+#    ports:
+#      - "9200:9200"
+#      - "9300:9300"
+#    environment:
+#      - "discovery.type=single-node"
+#
+#  kibana:
+#    image: kibana:7.14.2
+#    container_name: kibana
+#    restart: always
+#    depends_on:
+#      - logstash
+#    ports:
+#      - "9093:5601"
+#    environment:
+#      - "ELASTICSEARCH_HOSTS=http://elasticsearch:9200"
+#      - "discovery.type=single-node"
