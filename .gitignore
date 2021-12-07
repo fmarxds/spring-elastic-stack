@@ -7,6 +7,9 @@
 /grafana/data/grafana_data/alerting/
 /grafana/data/grafana_data/grafana.db
 
+### Logs ###
+/logs/
+
 ### Eclipse ###
 .metadata
 bin/

@@ -30,13 +30,15 @@ spring.data:
     username: ${MONGO_USERNAME:admin}
     password: ${MONGO_PASSWORD:admin}
 
-opentracing.jaeger:
-  udp-sender:
-    host: ${JAEGER_HOST:localhost}
-    port: ${JAEGER_PORT:6831}
-  log-spans: true
+#opentracing.jaeger:
+#  udp-sender:
+#    host: ${JAEGER_HOST:localhost}
+#    port: ${JAEGER_PORT:6831}
+#  log-spans: true
 
 
-logging.level:
-  org.zalando.logbook: TRACE
-  org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+logging:
+  file.name: ${LOG_FILE:./logs/backend.log}
+  level:
+    org.zalando.logbook: TRACE
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
