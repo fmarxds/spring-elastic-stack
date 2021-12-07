@@ -23,6 +23,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.zalando:logbook-spring-boot-starter:2.14.0")
+	implementation("io.opentracing.contrib:opentracing-spring-jaeger-web-starter:3.3.1")
 	implementation("io.opentracing.contrib:opentracing-spring-jaeger-cloud-starter:3.3.1")
 	implementation("net.logstash.logback:logstash-logback-encoder:7.0.1")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

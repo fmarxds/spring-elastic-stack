@@ -35,6 +35,7 @@ opentracing.jaeger:
     host: ${JAEGER_HOST:localhost}
     port: ${JAEGER_PORT:6831}
   log-spans: true
+  enable-b3-propagation: true
 
 
 logging:
